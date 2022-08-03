@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Text RPG</title>
+</head>
+<body>
+  <!-- 시작 페이지-->
+  <form id="startpage">
+    <span class="start_msg">Text RPG에 오신것을 환영합니다</span>
+    <input id="name_input" placeholder="주인공의 이름을 입력해주세요!"/>
+    <button id="start">시작</button>
+  </form>
+  <!-- 메인 페이지 -->
+  <div id="mainpage">
+    <div id="name"></div>
+    <div class="state">
+      <ul>
+        <li>
+          <span class="level"></span>
+        </li>
+        <li>
+          <span class="hp"></span>
+        </li>
+        <li>
+          <span class="atk"></span>
+        </li>
+        <li>
+          <span class="exp"></span>
+        </li>
+      </ul>
+    </div>
+    <div class="btn_wrapper">
+      <button class="adventure">모험하기</button>
+      <button class="rest">휴식하기</button>
+      <button class="end">끝내기</button>
+    </div>
+  </div>
+  
+  <!-- 모험 창-->
+  <div id="adventurePage">
+    <div class="monsterState">
+      <ul class="mosterState_wrap">
+        <li class="mosterName"></li>
+        <li class="monsterHp"></li>
+        <li class="monsteratk"></li>
+        <li class="monsterExp"></li>
+      </ul>
+    </div>
+    <img class="monsterImg" src="" alt="myImage">
+    <div class="message"></div>
+    <div class="btn_wrapper">
+      <button class="ad_attack">공격하기</button>
+      <button class="ad_heal">체력회복</button>
+      <button class="ad_run">도망가기</button>
+    </div>
+  </div>
+
+
+</body>
+</html>

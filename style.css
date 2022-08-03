@@ -1,0 +1,73 @@
+@import "reset.css";
+
+#startpage{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  min-height: 100vh;
+}
+#startpage .start_msg{
+  margin-bottom: 1rem;
+  font-weight:700;
+}
+#start{
+  margin:1rem 0;
+}
+#mainpage{
+  display:none;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  min-height: 100vh;
+}
+#name{
+  font-weight:700;
+  margin-bottom:1rem;
+  color:black;
+}
+#mainpage .state{
+  display:flex;
+  margin-bottom:2rem;
+}
+#mainpage .state >ul{
+  display:flex;
+  flex-direction: column;
+}
+#mainpage .state >ul>li{
+  padding:.5rem 0;
+
+}
+.btn_wrapper{
+  display:flex;
+  justify-content: space-between;
+}
+.btn_wrapper button{
+  margin:0 .5rem;
+}
+#adventurePage{
+  display:none;
+}
+
+#adventurePage{
+  display:none;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  min-height: 100vh;
+}
+#adventurePage .monsterState{
+  margin:.5rem 0;
+}
+#adventurePage .mosterState_wrap{
+  display:flex;
+  justify-content: space-between;
+}
+#adventurePage .mosterState_wrap>li{
+  margin:0 1rem;
+  font-weight:700;
+  font-size:24px;
+}
+#adventurePage .monsterImg{
+  margin-bottom:2rem;
+} 
