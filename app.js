@@ -24,7 +24,7 @@ const $player_exp = document.querySelector(".exp");
 const $monster_name= document.querySelector(".monsterName");
 const $monster_hp = document.querySelector(".monsterHp");
 const $monster_Exp = document.querySelector(".monsterExp");
-const $monster_Img = document.querySelector(".mosterImg");
+const $monster_Img = document.querySelector(".monsterImg");
 const $monster_atk = document.querySelector(".monsteratk");
 const $message = document.querySelector(".message");
 
@@ -36,8 +36,17 @@ const player= {
   hp:500,
   exp:0,
   atk:50,
+  attack(monster){
+    monster.hp -=this.atk;
+    this.hp -=monster.atk;
+  },
+  heal(monster){
+    this.hp +=30;
+    this.hp -=monster.atk;
+  },
 }
-const monster =[
+
+const monsterLst =[
   //{name:"",hp:,exp:,img:,atk:,},
   {name:"가디언 엔젤 슬라임",hp:500000,exp:10000,img:"/img/GanSil.gif",atk:5000},
   {name:"주황버섯",hp:120,exp:15,img:"/img/mushroom.gif",atk:10,},
@@ -58,7 +67,16 @@ $startPage.addEventListener('submit',(e)=>{
   $player_hp.textContent = `HP:${player.hp}/${player.maxHp}`;
 });
 
+//모험버튼 , lodash
 $btn_adventure.addEventListener('click',(e)=>{
-
-
+  $mainPage.style.display= 'none';
+  $adventurePage.style.display='flex';
+  //깊은 복사
+  monster = JSON.parse(JSON.stringify(monsterLst[Math.floor(Math.random()*monsterLst.length)]))
+  console.log(monster)
+  monster.maxHp=monster.hp;
+  $monster_name.textContent=monster.name;
+  $monster_atk.textContent=`ATK:${monster.atk}`;
+  $monster_Img.src=monster.img;
+  $monster_Exp.textContent=`EXP:${monster.exp}`;
 })
