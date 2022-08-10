@@ -94,7 +94,20 @@ class Game {
   }
   endHandler = (e) =>{
     e.preventDefault();
+    /*remove player ,monster*/ 
+    this.player=null;
+    this.monster=null;
+    this.updatePlayerStat();
+    this.updateMonsterStat();
+    /*remove Event*/
+    $btn_adventure.removeEventListener('click',this.adventureHandler);
+    $btn_rest.removeEventListener('click',this.restHandler);
+    $btn_end.removeEventListener('click',this.endHandler);
+    $btn_bt_attack.removeEventListener('click',this.attackHandler);
+    $btn_bt_run.removeEventListener('click',this.runHandler);
+    $btn_bt_heal.removeEventListener('click',this.healHandler);
     this.changeScreen("start");
+    game=null;
   }
   //player State 정보주입
   updatePlayerStat(){
@@ -158,6 +171,7 @@ class Game {
         player.atk *=player.level;
       }
       //console.log(player.exp);
+      this.monster=null;
       this.changeScreen("main");
       this.updatePlayerStat();
       return
