@@ -150,13 +150,14 @@ class Game {
     /*몬스터를 죽였는지 check ,level up 메커니즘 넣고, return*/
     if(monster.hp<=0){
       player.exp +=monster.exp;
+      //Level up 처리 => 전투 끝나고 난 뒤에 처리해도 되긴함.
       if(player.exp >=20*player.level){
         player.exp -= 20*player.level;
         player.level +=1;
         player.maxHp *=player.level;
         player.atk *=player.level;
       }
-      console.log(player.exp);
+      //console.log(player.exp);
       this.changeScreen("main");
       this.updatePlayerStat();
       return
